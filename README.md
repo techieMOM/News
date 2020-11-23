@@ -11,3 +11,5 @@ Notes :
 6. Search functionality works when user taps search button only. When user clears the text it loads the list from "Wired" source.
 7. Details Screen designed but Description was limited from the API and tags were not coming so i have used dummy text of Title.
 8. NavigationViewController i have used to match the design we can customise the header of Details Controller as we required.
+9. When image is not there i'm just showing blue background color
+
