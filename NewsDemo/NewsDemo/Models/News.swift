@@ -6,18 +6,20 @@
 //
 
 import Foundation
-class News : Decodable {
+
+struct News : Decodable {
     var articles = [Article]()
     private enum CodingKeys : String,CodingKey {
         case articles
     }
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         articles = try values.decodeIfPresent([Article].self, forKey: .articles) ?? []
 
     }
 }
-class Article : Decodable {
+
+struct Article : Decodable {
     var author  : String?
     var title  : String?
     var description  : String?
@@ -36,7 +38,7 @@ class Article : Decodable {
         case content
     }
     
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         author = try values.decodeIfPresent(String.self, forKey: .author) ?? ""
         title = try values.decodeIfPresent(String.self, forKey: .title) ?? ""
@@ -49,7 +51,7 @@ class Article : Decodable {
     }
     func  getDateString(_ dateTime : String) -> String {
         let dateFormatter1 = DateFormatter()
-        dateFormatter1.dateFormat = "yyyy-MM-dd'T'HH:mm:ssX"
+        dateFormatter1.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 
         let dateFormatter2 = DateFormatter()
         dateFormatter2.dateFormat = "yyyy.MM.dd"

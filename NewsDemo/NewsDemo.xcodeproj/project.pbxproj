@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8F058BDE256BE2B800A74A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058BDD256BE2B800A74A91 /* AppDelegate.swift */; };
 		8F058BE0256BE2B800A74A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058BDF256BE2B800A74A91 /* SceneDelegate.swift */; };
-		8F058BE2256BE2B800A74A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058BE1256BE2B800A74A91 /* ViewController.swift */; };
 		8F058BE5256BE2B800A74A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F058BE3256BE2B800A74A91 /* Main.storyboard */; };
 		8F058BE7256BE2BB00A74A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F058BE6256BE2BB00A74A91 /* Assets.xcassets */; };
 		8F058BEA256BE2BB00A74A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F058BE8256BE2BB00A74A91 /* LaunchScreen.storyboard */; };
@@ -26,6 +25,11 @@
 		8F058C43256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F058C41256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf */; };
 		8F058C48256BFC3200A74A91 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */; };
 		8F058C50256C0C2A00A74A91 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C4F256C0C2A00A74A91 /* BaseVC.swift */; };
+		8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C54256C1C9500A74A91 /* Extensions.swift */; };
+		8F058C76256C2E0B00A74A91 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C75256C2E0B00A74A91 /* CustomImageView.swift */; };
+		8F058C96256C36A200A74A91 /* TagsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */; };
+		8F058CA1256C463200A74A91 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */; };
+		8F058CA6256C4D5300A74A91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F058CA5256C4D5300A74A91 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +53,6 @@
 		8F058BDA256BE2B800A74A91 /* NewsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F058BDD256BE2B800A74A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F058BDF256BE2B800A74A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8F058BE1256BE2B800A74A91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8F058BE4256BE2B800A74A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F058BE6256BE2BB00A74A91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F058BE9256BE2BB00A74A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +74,11 @@
 		8F058C41256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GTWalsheimPro-Medium.ttf"; sourceTree = "<group>"; };
 		8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		8F058C4F256C0C2A00A74A91 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		8F058C54256C1C9500A74A91 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8F058C75256C2E0B00A74A91 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8F058CA5256C4D5300A74A91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +131,8 @@
 			children = (
 				8F058BDD256BE2B800A74A91 /* AppDelegate.swift */,
 				8F058BDF256BE2B800A74A91 /* SceneDelegate.swift */,
-				8F058BE1256BE2B800A74A91 /* ViewController.swift */,
 				8F058C2B256BE33300A74A91 /* Resources */,
+				8F058CAA256C4E5500A74A91 /* Cells */,
 				8F058C29256BE31800A74A91 /* Controllers */,
 				8F058C2A256BE32400A74A91 /* ViewModels */,
 				8F058C37256BE35500A74A91 /* Models */,
@@ -176,11 +184,13 @@
 		8F058C2B256BE33300A74A91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F058CA5256C4D5300A74A91 /* README.md */,
 				8F058C41256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf */,
 				8F058C40256BF61B00A74A91 /* GTWalsheimPro-Regular.ttf */,
 				8F058C10256BE2D600A74A91 /* DataManager.swift */,
 				8F058C3B256BE56D00A74A91 /* AppConstants.swift */,
-				8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */,
+				8F058C54256C1C9500A74A91 /* Extensions.swift */,
+				8F058C75256C2E0B00A74A91 /* CustomImageView.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,6 +201,16 @@
 				8F058C2C256BE34C00A74A91 /* News.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8F058CAA256C4E5500A74A91 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */,
+				8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */,
+				8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F058CA6256C4D5300A74A91 /* README.md in Resources */,
 				8F058C43256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf in Resources */,
 				8F058BEA256BE2BB00A74A91 /* LaunchScreen.storyboard in Resources */,
 				8F058BE7256BE2BB00A74A91 /* Assets.xcassets in Resources */,
@@ -326,15 +347,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F058C1B256BE2EE00A74A91 /* NewsDetailsViewController.swift in Sources */,
-				8F058BE2256BE2B800A74A91 /* ViewController.swift in Sources */,
+				8F058CA1256C463200A74A91 /* TagsCollectionViewCell.swift in Sources */,
 				8F058C11256BE2D600A74A91 /* DataManager.swift in Sources */,
 				8F058C2D256BE34C00A74A91 /* News.swift in Sources */,
 				8F058BDE256BE2B800A74A91 /* AppDelegate.swift in Sources */,
 				8F058C48256BFC3200A74A91 /* ArticleTableViewCell.swift in Sources */,
 				8F058C25256BE30E00A74A91 /* NewsDetailsViewModel.swift in Sources */,
 				8F058C50256C0C2A00A74A91 /* BaseVC.swift in Sources */,
+				8F058C76256C2E0B00A74A91 /* CustomImageView.swift in Sources */,
+				8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */,
 				8F058C20256BE30100A74A91 /* NewsViewModel.swift in Sources */,
 				8F058C16256BE2E300A74A91 /* NewsViewController.swift in Sources */,
+				8F058C96256C36A200A74A91 /* TagsCollectionViewLayout.swift in Sources */,
 				8F058BE0256BE2B800A74A91 /* SceneDelegate.swift in Sources */,
 				8F058C3C256BE56D00A74A91 /* AppConstants.swift in Sources */,
 			);

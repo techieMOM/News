@@ -9,13 +9,15 @@ import Foundation
 
 class DataManager {
     
+    // Getrequest using URLSession data task
     class func HTTPGetRequest ( url : URL,completion:@escaping (Data)->Void) {
-        let task =  URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task =  URLSession.shared.dataTask(with: url) {  (data, response, error) in
             guard let jsonData = data else { return }
            completion(jsonData)
         }
         task.resume()
     }
+    // API call to fetch news from specific source
     class func fetchNewsFromSource(_ source : String,completion:@escaping ([Article])->Void) {
         if let newsURL = URL(string: String(format: APIs.newsUrl, source,APIs.API_KEY)) {
             HTTPGetRequest(url: newsURL) { (jsonData) in
@@ -24,6 +26,7 @@ class DataManager {
         }
         else { completion([])}
     }
+    // API to search news
     class func searchForNews(_ searchString : String,completion:@escaping ([Article])->Void) {
         if let newsURL = URL(string: String(format: APIs.searchURL, searchString,APIs.API_KEY)) {
             HTTPGetRequest(url: newsURL) { (jsonData) in
@@ -33,6 +36,7 @@ class DataManager {
         else { completion([])}
     }
     
+    // Decoding Json data to Articles array
     class func getArticles (_ jsonData : Data) -> [Article] {
         do{
             let decoder = JSONDecoder()
