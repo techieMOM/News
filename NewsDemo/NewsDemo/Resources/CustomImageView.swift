@@ -10,7 +10,7 @@ import UIKit
 // Custom ImageView to download image from URL and assiging
 class CustomImageView: UIImageView {
     // To download the image from URL and assigning created custom view
-    func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
+    func downloadedFrom(_ url: URL, mode: UIView.ContentMode = .scaleAspectFill) {
         contentMode = mode
         self.image = nil
         self.backgroundColor = .clear

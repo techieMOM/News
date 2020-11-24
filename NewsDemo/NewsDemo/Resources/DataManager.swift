@@ -10,14 +10,16 @@ import Foundation
 class DataManager {
     
     // Getrequest using URLSession data task
+    // I have written reusable get request method
     class func HTTPGetRequest ( url : URL,completion:@escaping (Data)->Void) {
-        let task =  URLSession.shared.dataTask(with: url) {  (data, response, error) in
+        URLSession.shared.dataTask(with: url) {  (data, response, error) in
             guard let jsonData = data else { return }
            completion(jsonData)
-        }
-        task.resume()
+        }.resume()
     }
+    
     // API call to fetch news from specific source
+    // I have attached API_KEY from querystring only as per API
     class func fetchNewsFromSource(_ source : String,completion:@escaping ([Article])->Void) {
         if let newsURL = URL(string: String(format: APIs.newsUrl, source,APIs.API_KEY)) {
             HTTPGetRequest(url: newsURL) { (jsonData) in
@@ -27,6 +29,7 @@ class DataManager {
         else { completion([])}
     }
     // API to search news
+    // I have attached API_KEY from querystring only as per API
     class func searchForNews(_ searchString : String,completion:@escaping ([Article])->Void) {
         if let newsURL = URL(string: String(format: APIs.searchURL, searchString,APIs.API_KEY)) {
             HTTPGetRequest(url: newsURL) { (jsonData) in

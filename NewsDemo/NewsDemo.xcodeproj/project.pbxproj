@@ -24,7 +24,7 @@
 		8F058C42256BF61B00A74A91 /* GTWalsheimPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F058C40256BF61B00A74A91 /* GTWalsheimPro-Regular.ttf */; };
 		8F058C43256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F058C41256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf */; };
 		8F058C48256BFC3200A74A91 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */; };
-		8F058C50256C0C2A00A74A91 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C4F256C0C2A00A74A91 /* BaseVC.swift */; };
+		8F058C50256C0C2A00A74A91 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C4F256C0C2A00A74A91 /* BaseViewController.swift */; };
 		8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C54256C1C9500A74A91 /* Extensions.swift */; };
 		8F058C76256C2E0B00A74A91 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C75256C2E0B00A74A91 /* CustomImageView.swift */; };
 		8F058C96256C36A200A74A91 /* TagsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */; };
@@ -73,7 +73,7 @@
 		8F058C40256BF61B00A74A91 /* GTWalsheimPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GTWalsheimPro-Regular.ttf"; sourceTree = "<group>"; };
 		8F058C41256BF61B00A74A91 /* GTWalsheimPro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GTWalsheimPro-Medium.ttf"; sourceTree = "<group>"; };
 		8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		8F058C4F256C0C2A00A74A91 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		8F058C4F256C0C2A00A74A91 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F058C54256C1C9500A74A91 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8F058C75256C2E0B00A74A91 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				8F058C15256BE2E300A74A91 /* NewsViewController.swift */,
-				8F058C4F256C0C2A00A74A91 /* BaseVC.swift */,
+				8F058C4F256C0C2A00A74A91 /* BaseViewController.swift */,
 				8F058C1A256BE2EE00A74A91 /* NewsDetailsViewController.swift */,
 			);
 			path = Controllers;
@@ -353,7 +353,7 @@
 				8F058BDE256BE2B800A74A91 /* AppDelegate.swift in Sources */,
 				8F058C48256BFC3200A74A91 /* ArticleTableViewCell.swift in Sources */,
 				8F058C25256BE30E00A74A91 /* NewsDetailsViewModel.swift in Sources */,
-				8F058C50256C0C2A00A74A91 /* BaseVC.swift in Sources */,
+				8F058C50256C0C2A00A74A91 /* BaseViewController.swift in Sources */,
 				8F058C76256C2E0B00A74A91 /* CustomImageView.swift in Sources */,
 				8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */,
 				8F058C20256BE30100A74A91 /* NewsViewModel.swift in Sources */,
@@ -537,7 +537,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QV8H9L925;
 				INFOPLIST_FILE = NewsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -555,7 +557,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QV8H9L925;
 				INFOPLIST_FILE = NewsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

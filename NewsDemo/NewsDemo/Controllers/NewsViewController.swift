@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsViewController: BaseVC {
+class NewsViewController: BaseViewController {
     @IBOutlet weak var articleTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var viewModel: NewsViewModel!
@@ -24,7 +24,9 @@ class NewsViewController: BaseVC {
     }
     
 }
+// UITableView Delegate and DataSource Methods
 extension NewsViewController : UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.articleCount
     }
@@ -35,22 +37,30 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource {
         cell.selectionStyle = .none
         cell.titleLabel.text = article.title ?? ""
         // some texts are containing html tags to make it readable
-        cell.content.text = article.description?.htmlToString
+        cell.content.text = article.description?.htmlConvertedString
         cell.publishedDate.text = article.publishedAt ?? ""
         if let imageURL = URL(string: article.urlToImage ?? "") {
-            cell.articleImage.downloadedFrom(url: imageURL)
+            cell.articleImage.downloadedFrom(imageURL)
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "segueDetails", sender: indexPath.row)
+        self.performSegue(withIdentifier: Constants.detailsSegue, sender: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detialsVc = segue.destination as? NewsDetailsViewController {
             detialsVc.viewModel.article = self.viewModel.getArticle(sender as! Int)
         }
     }
 }
+
+// SearchBar Delegate Methods
 extension NewsViewController : UISearchBarDelegate {
     // If user clicks on Search button in keyboard
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -76,6 +86,7 @@ extension NewsViewController : UISearchBarDelegate {
     }
     
     func showWiredList() {
+        // as keyboard is not dismissing in this case have added delay of second
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.searchBar.resignFirstResponder()
         }

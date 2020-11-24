@@ -7,6 +7,7 @@
 
 import Foundation
 
+// News Model getting other info but i'm just showing what is required.
 struct News : Decodable {
     var articles = [Article]()
     private enum CodingKeys : String,CodingKey {
@@ -23,19 +24,15 @@ struct Article : Decodable {
     var author  : String?
     var title  : String?
     var description  : String?
-    var url  : String?
     var urlToImage  : String?
     var publishedAt  : String?
-    var content  : String?
     
     private enum CodingKeys: String, CodingKey {
         case author
         case title
         case description
-        case url
         case urlToImage
         case publishedAt
-        case content
     }
     
     init(from decoder: Decoder) throws {
@@ -43,12 +40,12 @@ struct Article : Decodable {
         author = try values.decodeIfPresent(String.self, forKey: .author) ?? ""
         title = try values.decodeIfPresent(String.self, forKey: .title) ?? ""
         description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
-        url = try values.decodeIfPresent(String.self, forKey: .url) ?? ""
         urlToImage = try values.decodeIfPresent(String.self, forKey: .urlToImage) ?? ""
         publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt) ?? ""
         publishedAt = self.getDateString(publishedAt ?? "")
-        content = try values.decodeIfPresent(String.self, forKey: .content) ?? ""
     }
+    // Converting Date String In model priorly
+    // Here is some cases Date String is not in proper format in that case i have trimmed the string as we required.
     func  getDateString(_ dateTime : String) -> String {
         let dateFormatter1 = DateFormatter()
         dateFormatter1.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

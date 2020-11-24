@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsDetailsViewController: BaseVC {
+class NewsDetailsViewController: BaseViewController {
     @IBOutlet var viewModel: NewsDetailsViewModel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var articleImage: CustomImageView!
@@ -15,36 +15,42 @@ class NewsDetailsViewController: BaseVC {
     @IBOutlet weak var heightOfCollectionView: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let article = self.viewModel.article {
-            DispatchQueue.main.async {
-                if let imageURL = URL(string: article.urlToImage ?? "") {
-                    self.articleImage.downloadedFrom(url: imageURL)
-                }
-            }
-            self.setNavTitle(article.title ?? "")
-            self.details.text = article.description?.htmlToString
-            self.setupCollection()
-            // As we don't have tags from API i did break the title and shown for demo purpose.
-            self.viewModel?.tagsList = article.title?.components(separatedBy: " ") ?? []
-        }
+        self.setupUI()
         // Do any additional setup after loading the view.
     }
     
+    func setupUI() {
+        if let article = self.viewModel.article {
+            DispatchQueue.main.async {
+                if let imageURL = URL(string: article.urlToImage ?? "") {
+                    self.articleImage.downloadedFrom(imageURL)
+                }
+            }
+            self.setNavTitle(article.title ?? "")
+            self.details.text = article.description?.htmlConvertedString
+            self.setupCollection()
+            // As we don't have tags from API i did break the title to match UI.
+            self.viewModel?.tagsList = article.title?.components(separatedBy: " ") ?? []
+        }
+    }
+    
     // we can make it reusable if more controllers are there
-    // 2 line navbar title
+    // 2 lines navbar title
     func setNavTitle(_ title : String) {
         let label = UILabel()
         label.backgroundColor = .clear
         label.numberOfLines = 2
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.font = UIFont.boldSystemFont(ofSize: 15.0)
         label.textAlignment = .center
         label.textColor = .black
         label.text = title
         self.navigationItem.titleView = label
     }
 }
-// To show label in tags format used collection view with custim flow layout
+// To show labels horizontally used collection view with custom flow layout
+// If only 2 labels i can just write a stack view but as it would be dynamic created a collection view.
 extension NewsDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel.tagsCount
     }

@@ -1,13 +1,13 @@
 //
-//  BaseVC.swift
+//  BaseViewController.swift
 //  NewsDemo
 //
 //  Created by SOWJI on 23/11/20.
 //
 
 import UIKit
-
-class BaseVC: UIViewController {
+// The purpose is to share common functionalities in super class
+class BaseViewController: UIViewController {
     var currentOverlay : UIView?
 
     override func viewDidLoad() {
@@ -15,9 +15,10 @@ class BaseVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    // Simple overlay to show while we are fetching API Data
     func showOverlay() {
+        // Here i'm just adding an transparent overlay and an activity indicator on top of it
         self.hideOverLay()
-        // Create the overlay
         let overlay = UIView(frame: self.view.frame)
         overlay.center = self.view.center
         overlay.alpha = 0.6
