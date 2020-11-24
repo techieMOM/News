@@ -37,6 +37,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0bd-M0-12N">
                                 <rect key="frame" x="0.0" y="86" width="414" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" id="brt-Kc-fk9" customClass="ArticleTableViewCell" customModule="NewsDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="74.5"/>
@@ -114,14 +115,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="kc9-Sj-eCo"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ooops There are no articles found for the searched value.Try Again !!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-IE-3Pa">
+                                <rect key="frame" x="41.5" y="367.5" width="331" height="39"/>
+                                <fontDescription key="fontDescription" name="GTWalsheimPro-Medium" family="GT Walsheim Pro" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0bd-M0-12N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1xd-7h-CT0"/>
                             <constraint firstAttribute="trailing" secondItem="GyV-Mm-Yhg" secondAttribute="trailing" constant="8" id="5FZ-hK-TDm"/>
+                            <constraint firstItem="iaF-IE-3Pa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="6xp-da-RmK"/>
+                            <constraint firstItem="iaF-IE-3Pa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7KT-tk-iKa"/>
                             <constraint firstItem="GyV-Mm-Yhg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Lb6-XR-b4I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0bd-M0-12N" secondAttribute="trailing" id="OH7-aM-HRH"/>
+                            <constraint firstItem="iaF-IE-3Pa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OaA-r5-aKa"/>
                             <constraint firstItem="GyV-Mm-Yhg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WFu-EF-PIj"/>
                             <constraint firstItem="0bd-M0-12N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XRk-L7-30U"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0bd-M0-12N" secondAttribute="bottom" id="eZh-QO-rfJ"/>
@@ -132,6 +142,7 @@
                     <navigationItem key="navigationItem" title="News" id="to3-eQ-QBX"/>
                     <connections>
                         <outlet property="articleTable" destination="0bd-M0-12N" id="8eI-3q-WTA"/>
+                        <outlet property="noArticlesLabel" destination="iaF-IE-3Pa" id="hCx-Pi-LZN"/>
                         <outlet property="searchBar" destination="GyV-Mm-Yhg" id="eFO-Vs-dVa"/>
                         <outlet property="viewModel" destination="gXE-En-Tej" id="0Xd-Ms-HBc"/>
                         <segue destination="7eu-rA-GvQ" kind="show" identifier="segueDetails" id="uqi-2Y-mn6"/>

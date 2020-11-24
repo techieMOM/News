@@ -5,7 +5,7 @@ Notes :
 # Architecture
  I have followed MVVM Architecture here and wrote few test cases
  
-# Deployment Targer
+# Deployment Target
   App supports iOS 13 and above
   
 # Network Layer

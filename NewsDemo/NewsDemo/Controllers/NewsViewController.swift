@@ -11,6 +11,7 @@ class NewsViewController: BaseViewController {
     @IBOutlet weak var articleTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var viewModel: NewsViewModel!
+    @IBOutlet weak var noArticlesLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,7 @@ extension NewsViewController : UISearchBarDelegate {
     func loadArticles() {
         DispatchQueue.main.async {
             self.articleTable.reloadData()
+            self.noArticlesLabel.isHidden = !self.viewModel.filteredArticles.isEmpty
             self.hideOverLay()
         }
     }

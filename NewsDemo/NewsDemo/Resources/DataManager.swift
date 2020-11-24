@@ -10,7 +10,7 @@ import Foundation
 class DataManager {
     
     // Getrequest using URLSession data task
-    // I have written reusable get request method
+    // reusable get request method
     class func HTTPGetRequest ( url : URL,completion:@escaping (Data)->Void) {
         URLSession.shared.dataTask(with: url) {  (data, response, error) in
             guard let jsonData = data else { return }
@@ -46,6 +46,7 @@ class DataManager {
             let news = try decoder.decode(News.self, from: jsonData)
             return news.articles
         }catch let err{
+            // I'm just not returning any error as alert here so returning empty array
             print(err)
             return []
         }
