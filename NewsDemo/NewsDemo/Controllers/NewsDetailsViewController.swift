@@ -21,6 +21,7 @@ class NewsDetailsViewController: BaseViewController {
     
     func setupUI() {
         if let article = self.viewModel.article {
+            self.viewModel?.tagsList = article.title?.components(separatedBy: " ") ?? []
             DispatchQueue.main.async {
                 if let imageURL = URL(string: article.urlToImage ?? "") {
                     self.articleImage.downloadedFrom(imageURL)
@@ -30,7 +31,6 @@ class NewsDetailsViewController: BaseViewController {
             self.details.text = article.description?.htmlConvertedString
             self.setupCollection()
             // As we don't have tags from API i did break the title to match UI.
-            self.viewModel?.tagsList = article.title?.components(separatedBy: " ") ?? []
         }
     }
     
@@ -47,8 +47,7 @@ class NewsDetailsViewController: BaseViewController {
         self.navigationItem.titleView = label
     }
 }
-// To show labels horizontally used collection view with custom flow layout
-// If only 2 labels i can just write a stack view but as it would be dynamic created a collection view.
+
 extension NewsDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,15 +55,18 @@ extension NewsDetailsViewController : UICollectionViewDelegate,UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as? TagsCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.tagCell, for: indexPath) as? TagsCollectionViewCell else {return UICollectionViewCell()}
+        // Setting CollectionView Height based on content height
         heightOfCollectionView.constant = tagsCollection.contentSize.height
         cell.tagLabel.text = self.viewModel.getTag(indexPath.item)
         cell.tagLabel.layer.cornerRadius = 8.0
         cell.tagLabel.clipsToBounds = true
         return cell
     }
+    
+    // Settings up the collection view with customFlowLayout
     func setupCollection() {
-        let layout = TagsCollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
         tagsCollection.collectionViewLayout = layout
         tagsCollection.delegate = self
         tagsCollection.dataSource = self
@@ -74,6 +76,7 @@ extension NewsDetailsViewController : UICollectionViewDelegate,UICollectionViewD
             tagsCollection.reloadData()
         }
     }
+    // sizeForItemAt for each item
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Size of the cell based on text size and padding
         let item = self.viewModel.getTag(indexPath.item)

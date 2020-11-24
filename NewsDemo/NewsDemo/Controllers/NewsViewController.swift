@@ -15,6 +15,7 @@ class NewsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showOverlay()
+        self.articleTable.estimatedRowHeight = 1000
         // Fetching news API
         self.viewModel.fetchNewsFromSource("wired") {_ in
             // Loading news items
@@ -32,16 +33,9 @@ extension NewsViewController : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleCell", for: indexPath) as? ArticleTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.articleCell, for: indexPath) as? ArticleTableViewCell else { return UITableViewCell() }
         let article = self.viewModel.getArticle(indexPath.row)
-        cell.selectionStyle = .none
-        cell.titleLabel.text = article.title ?? ""
-        // some texts are containing html tags to make it readable
-        cell.content.text = article.description?.htmlConvertedString
-        cell.publishedDate.text = article.publishedAt ?? ""
-        if let imageURL = URL(string: article.urlToImage ?? "") {
-            cell.articleImage.downloadedFrom(imageURL)
-        }
+        cell.setupCell(article)
         return cell
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 class NewsDetailsViewModel: NSObject {
     var article : Article?
-    var tagsList = ["regional","Technology","wired"]
+    var tagsList = [String]()
     var tagsCount : Int {
         return tagsList.count
     }

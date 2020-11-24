@@ -22,5 +22,16 @@ class ArticleTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setupCell(_ article : Article) {
+        self.selectionStyle = .none
+        self.titleLabel.text = article.title ?? ""
+        // some texts are containing html tags to make it readable
+        self.content.text = article.description?.htmlConvertedString
+        self.publishedDate.text = article.publishedAt ?? ""
+        if let imageURL = URL(string: article.urlToImage ?? "") {
+            self.articleImage.downloadedFrom(imageURL)
+        }
+    }
 
 }

@@ -27,7 +27,6 @@
 		8F058C50256C0C2A00A74A91 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C4F256C0C2A00A74A91 /* BaseViewController.swift */; };
 		8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C54256C1C9500A74A91 /* Extensions.swift */; };
 		8F058C76256C2E0B00A74A91 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C75256C2E0B00A74A91 /* CustomImageView.swift */; };
-		8F058C96256C36A200A74A91 /* TagsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */; };
 		8F058CA1256C463200A74A91 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */; };
 		8F058CA6256C4D5300A74A91 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8F058CA5256C4D5300A74A91 /* README.md */; };
 /* End PBXBuildFile section */
@@ -76,7 +75,6 @@
 		8F058C4F256C0C2A00A74A91 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F058C54256C1C9500A74A91 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8F058C75256C2E0B00A74A91 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8F058CA5256C4D5300A74A91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,7 +204,6 @@
 		8F058CAA256C4E5500A74A91 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8F058C95256C36A200A74A91 /* TagsCollectionViewLayout.swift */,
 				8F058CA0256C463200A74A91 /* TagsCollectionViewCell.swift */,
 				8F058C47256BFC3200A74A91 /* ArticleTableViewCell.swift */,
 			);
@@ -358,7 +355,6 @@
 				8F058C55256C1C9500A74A91 /* Extensions.swift in Sources */,
 				8F058C20256BE30100A74A91 /* NewsViewModel.swift in Sources */,
 				8F058C16256BE2E300A74A91 /* NewsViewController.swift in Sources */,
-				8F058C96256C36A200A74A91 /* TagsCollectionViewLayout.swift in Sources */,
 				8F058BE0256BE2B800A74A91 /* SceneDelegate.swift in Sources */,
 				8F058C3C256BE56D00A74A91 /* AppConstants.swift in Sources */,
 			);
