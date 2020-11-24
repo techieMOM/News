@@ -8,7 +8,9 @@
 import UIKit
 
 class NewsViewModel: NSObject {
+    // Original Wired Data it contains
     var articles = [Article]()
+    // To maintain Data during Search and normal
     var filteredArticles = [Article]()
     var articleCount : Int {
         return self.filteredArticles.count

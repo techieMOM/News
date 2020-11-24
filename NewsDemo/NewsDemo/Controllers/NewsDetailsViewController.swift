@@ -76,10 +76,12 @@ extension NewsDetailsViewController : UICollectionViewDelegate,UICollectionViewD
             tagsCollection.reloadData()
         }
     }
+    
     // sizeForItemAt for each item
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Size of the cell based on text size and padding
         let item = self.viewModel.getTag(indexPath.item)
+        // Custom Font i have used as per design can give generic sysstem font as well.
         if let font = UIFont(name: "GTWalsheimPro-Regular", size: 12.0) {
         let fontAttributes = [NSAttributedString.Key.font: font]
         let size: CGSize = item.size(withAttributes: fontAttributes)
