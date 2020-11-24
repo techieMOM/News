@@ -9,7 +9,7 @@ Notes :
   App supports iOS 13 and above
   
 # Network Layer
-In DataManager.swift Making API Calls and Created CustomImageView.swift for image network call
+In DataManager.swift Making API Calls and Created CustomImageView.swift for image API call
 
 I have made API calls with URLSession normal call with querystring i have done.Didn't write any network layers as single API call is there.
 
